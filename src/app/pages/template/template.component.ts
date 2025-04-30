@@ -673,7 +673,7 @@ constructor(private androidPermissions: AndroidPermissions,private chooser: Choo
       let sendValues = sendValuesData;
       const jsonData = JSON.stringify(sendValues);
       let options: FileUploadOptions = {
-        fileKey: 'chatFile',
+        fileKey: 'imgLink',
         fileName:imageName,
         mimeType: imagemimeType,
         chunkedMode:false,
