@@ -538,6 +538,7 @@ constructor(private androidPermissions: AndroidPermissions,private chooser: Choo
     const fileTransfer: FileTransferObject = this.transfer.create();
     let valOfArray  = JSON.stringify(this.arraySendToServer);
     const sendValues = {'mainUserName':this.mainUserName,'templateName':this.nameOfTem,'lang':this.languageOfTem,'userName':this.userName,'password':this.password,'apiKey':this.apiKey,'mobile':this.number,'sessionLogin':this.sessionLogin,'msgWa':this.allDataOfMessages,valOfArray};
+    alert(this.filedata);
     if(this.filedata!=undefined && this.filedata!=null && this.filedata!=""){
       let fileName = "";
       let mimeType: string="";
