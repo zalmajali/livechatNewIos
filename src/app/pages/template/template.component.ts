@@ -635,12 +635,20 @@ constructor(private androidPermissions: AndroidPermissions,private chooser: Choo
         })
       }
     }else{
-      this.chatService.sendMessageTem(sendValues).then(async dataHist=>{
-        this.returnResultDataBySession = dataHist;
-        let errorDataSession = this.returnResultDataBySession.messageId;
-        this.modalController.dismiss({
-          "key":0
-        })
+            const formData = new FormData();
+      for (const key in sendValues) {
+        formData.append(key, (sendValues as any)[key]);
+      }
+      try {
+        const uploadResponse = await fetch("https://api.taqnyat.sa/chatSendTemplate.php", {
+          method: 'POST',
+          body: formData
+        });
+        const data = await uploadResponse.text();
+      } catch (error) {
+      }
+      this.modalController.dismiss({
+        "key":0
       })
     }
   }
@@ -685,10 +693,12 @@ constructor(private androidPermissions: AndroidPermissions,private chooser: Choo
       }
         fileTransfer.upload(imageData, "https://api.taqnyat.sa/chatSendTemplate.php", options)
         .then(async(data) => {
+          alert("1")
           this.modalController.dismiss({
             "key":1
           })
         }, (err) => {
+          alert("2")
           this.modalController.dismiss({
             "key":1
           })
