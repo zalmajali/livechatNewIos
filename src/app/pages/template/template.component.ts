@@ -622,10 +622,12 @@ constructor(private androidPermissions: AndroidPermissions,private chooser: Choo
         }
         fileTransfer.upload(this.filedata.uri, "https://api.taqnyat.sa/chatSendTemplate.php", options)
         .then(async(data) => {
+          alert(1);
           this.modalController.dismiss({
             "key":1
           })
         }, (err) => {
+          alert(2);
           this.modalController.dismiss({
             "key":1
           })
