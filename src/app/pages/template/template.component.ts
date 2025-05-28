@@ -538,12 +538,10 @@ constructor(private androidPermissions: AndroidPermissions,private chooser: Choo
     const fileTransfer: FileTransferObject = this.transfer.create();
     let valOfArray  = JSON.stringify(this.arraySendToServer);
     const sendValues = {'mainUserName':this.mainUserName,'templateName':this.nameOfTem,'lang':this.languageOfTem,'userName':this.userName,'password':this.password,'apiKey':this.apiKey,'mobile':this.number,'sessionLogin':this.sessionLogin,'msgWa':this.allDataOfMessages,valOfArray};
-    alert(this.filedata);
     if(this.filedata){
       let fileName = "";
       let mimeType: string="";
       let sendValuesNew = {'mainUserName':this.mainUserName,'templateName':this.nameOfTem,'lang':this.languageOfTem,'userName':this.userName,'password':this.password,'apiKey':this.apiKey,'mobile':this.number,'sessionLogin':this.sessionLogin,'msgWa':this.allDataOfMessages,valOfArray,'linkType':this.linkType};
-      alert(this.linkType);
       if(this.linkType == 1){
         if (this.platform.is('android') && this.filedata.startsWith('content://')) {
           resolveLocalFileSystemURL(this.filedata, (fileEntry:any) => {
@@ -647,12 +645,12 @@ constructor(private androidPermissions: AndroidPermissions,private chooser: Choo
          this.modalController.dismiss({
         "key":0
       })
-        alert(1)
+        alert(50)
       } catch (error) {
          this.modalController.dismiss({
         "key":0
       })
-        alert(2)
+        alert(40)
       }
     }
   }
