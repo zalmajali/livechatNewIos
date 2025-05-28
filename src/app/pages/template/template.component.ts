@@ -635,7 +635,7 @@ constructor(private androidPermissions: AndroidPermissions,private chooser: Choo
         })
       }
     }else{
-            const formData = new FormData();
+      const formData = new FormData();
       for (const key in sendValues) {
         formData.append(key, (sendValues as any)[key]);
       }
