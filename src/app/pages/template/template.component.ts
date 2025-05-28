@@ -542,6 +542,7 @@ constructor(private androidPermissions: AndroidPermissions,private chooser: Choo
       let fileName = "";
       let mimeType: string="";
       let sendValuesNew = {'mainUserName':this.mainUserName,'templateName':this.nameOfTem,'lang':this.languageOfTem,'userName':this.userName,'password':this.password,'apiKey':this.apiKey,'mobile':this.number,'sessionLogin':this.sessionLogin,'msgWa':this.allDataOfMessages,valOfArray,'linkType':this.linkType};
+      alert(this.linkType);
       if(this.linkType == 1){
         if (this.platform.is('android') && this.filedata.startsWith('content://')) {
           resolveLocalFileSystemURL(this.filedata, (fileEntry:any) => {
